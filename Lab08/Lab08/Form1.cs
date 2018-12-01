@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +12,14 @@ namespace Lab08
 {
     public partial class fMain : Form
     {
+        private BindingList<Phone> phones = new BindingList<Phone>();
         public fMain()
         {
             InitializeComponent();
+            tbPhonesInfo.DataSource = phones;
+            tbPhonesInfo.DisplayMember = "Model";
+            tbPhonesInfo.ValueMember = "Family";
+            tbPhonesInfo.SelectedIndexChanged += new EventHandler(tbPhonesInfo_SelectedIndexChanged);
         }
 
         private void btnAddPhone_Click(object sender, EventArgs e)
@@ -23,22 +28,30 @@ namespace Lab08
             fPhone ft = new fPhone(phone);
             if (ft.ShowDialog() == DialogResult.OK)
             {
-                tbPhonesInfo.Text +=
-                string.Format("Фірма: {0} | Операційна система: {1} | RAM: {2} | Частота процесора: {3} | Кількість ядер: {4}|  [{5} | {6}] | ",
-                phone.Firm, phone.Operating_Systems, phone.RAM,
-                phone.Processor_frequency, phone.Number_of_cores,
-                phone.HasMini_jack ? "Є Роз'єм для наушників" : "Немає роз'єму",
-                phone.HasGPS ? "Є GPS" : "Немає GPS");
-                
+                phones.Add(phone);
+             
             }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Припинити роботу застосунку?",
-           "Припинити роботу", MessageBoxButtons.OKCancel,
+            if (MessageBox.Show("Припинити роботу застосунку?", 
+            "Припинити роботу", MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
+        }
+        private void tbPhonesInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string family = tbPhonesInfo.SelectedValue.ToString();
+
+            Phone phone = (Phone)tbPhonesInfo.SelectedItem;
+            MessageBox.Show("Фірма: " + phone.Firm + " " +
+            phone.Operating_Systems + " | Операційна система: " +
+            phone.RAM + " | RAM: " +
+            phone.Processor_frequency + " | Частота процесора: " +
+            phone.Number_of_cores + " | Кількість ядер: " +
+            phone.HasMini_jack + " | Наявність роз'єму для наушників: " +
+            phone.HasGPS, "Наявність GPS");
         }
     }
 }
