@@ -71,9 +71,11 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddPhone);
             this.Controls.Add(this.tbPhonesInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "\"Лабораторна робота №8\"";
+            this.Text = "Лабораторна робота №8";
             this.ResumeLayout(false);
             this.PerformLayout();
 
