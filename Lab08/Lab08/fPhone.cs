@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,7 +49,14 @@ namespace Lab08
                 chbHasGPS.Checked = ThePhone.HasGPS;
             }
         }
+        private void tbCores_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                MessageBox.Show("Заборонено використання літер та десяткових чисел.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
 
-       
     }
 }
