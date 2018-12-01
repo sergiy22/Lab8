@@ -17,8 +17,7 @@ namespace Lab08
         {
             InitializeComponent();
             tbPhonesInfo.DataSource = phones;
-            tbPhonesInfo.DisplayMember = "Model";
-            tbPhonesInfo.ValueMember = "Family";
+            tbPhonesInfo.DisplayMember = "Firm";
             tbPhonesInfo.SelectedIndexChanged += new EventHandler(tbPhonesInfo_SelectedIndexChanged);
         }
 
