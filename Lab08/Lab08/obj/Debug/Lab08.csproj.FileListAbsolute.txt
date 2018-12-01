@@ -1,0 +1,11 @@
+D:\ООП\Lab08\Lab08\bin\Debug\Lab08.exe.config
+D:\ООП\Lab08\Lab08\bin\Debug\Lab08.exe
+D:\ООП\Lab08\Lab08\bin\Debug\Lab08.pdb
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.csprojAssemblyReference.cache
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.fMain.resources
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.fPhone.resources
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.Properties.Resources.resources
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.csproj.GenerateResource.cache
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.csproj.CoreCompileInputs.cache
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.exe
+D:\ООП\Lab08\Lab08\obj\Debug\Lab08.pdb
